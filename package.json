@@ -4,6 +4,8 @@
   "description": "",
   "main": ".tmp/main/index.js",
   "scripts": {
+    "watch": "babel --watch --out-dir .tmp src",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
