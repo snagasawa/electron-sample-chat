@@ -1,5 +1,6 @@
 import { app, Menu } from 'electron'
 import create from './createWindow'
+
 function setAppMenu() {
   const template = [
     {
