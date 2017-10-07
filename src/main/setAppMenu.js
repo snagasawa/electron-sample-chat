@@ -1,5 +1,5 @@
 import { app, Menu } from 'electron'
-import create from './createWindow'
+import createWindow from './createWindow'
 
 function setAppMenu() {
   const template = [
@@ -7,7 +7,7 @@ function setAppMenu() {
       label: 'File',
       submenu: [
         { label: 'New Window', accelerator: 'CmdOrCtrl+N', clinck: createWindow },
-        { type: 'separtor' },
+        { type: 'separator' },
         { label: 'Close', accelerator: 'CmdOrCtrl+W', clinck: 'close' },
       ]
     },
@@ -36,30 +36,30 @@ function setAppMenu() {
       ]
     }
   ]
-}
 
-if (process.platform === 'darwin') {
-  template.unshift({
-    label: app.getName(),
-    submenu: [
-      { role: 'about' },
-      { type: 'separator' },
-      { role: 'services', submenu: [] },
-      { type: 'separator' },
-      { role: 'hide' },
-      { role: 'hideothers' },
-      { role: 'unhide' },
-      { type: 'separator' },
-      { role: 'quit' },
-    ]
-  })
-  template.push({
-    role: 'window',
-    submenu: [
-      { role: 'minimize' },
-      { role: 'zoom' }
-    ]
-  })
+  if (process.platform === 'darwin') {
+    template.unshift({
+      label: app.getName(),
+      submenu: [
+        { role: 'about' },
+        { type: 'separator' },
+        { role: 'services', submenu: [] },
+        { type: 'separator' },
+        { role: 'hide' },
+        { role: 'hideothers' },
+        { role: 'unhide' },
+        { type: 'separator' },
+        { role: 'quit' },
+      ]
+    })
+    template.push({
+      role: 'window',
+      submenu: [
+        { role: 'minimize' },
+        { role: 'zoom' }
+      ]
+    })
+  }
 
   const appMenu = Menu.buildFromTemplate(template)
 

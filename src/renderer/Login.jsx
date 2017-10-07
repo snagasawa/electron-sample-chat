@@ -72,7 +72,7 @@ export default class Login extends Component {
           <label>Email address</label>
           <input
             type='email'
-            className='form-controll'
+            className='form-control'
             placeholder='email'
             onChange={this.handleOnChangeEmail}
             value={this.state.email}
@@ -82,7 +82,7 @@ export default class Login extends Component {
           <label>Password</label>
           <input
             type='password'
-            className='form-controll'
+            className='form-control'
             placeholder='password'
             onChange={this.handleOnChangePassword}
             value={this.state.password}
