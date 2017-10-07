@@ -22,4 +22,14 @@ if (!location.hash.length) {
   location.hash = "#/login"
 }
 
+const config = {
+  apiKey: 'AIzaSyAG26sQ3UC2mn1q9kefQRxCRdqBJa8WrP4',
+  authDomain: 'electron-chat-5c2da.firebaseapp.com',
+  databaseURL: 'https://electron-chat-5c2da.firebaseio.com',
+  projectId: 'electron-chat-5c2da',
+  storageBucket: '',
+  messagingSenderId: '1044208302385'
+}
+firebase.initializeApp(config)
+
 render(appRouting, document.getElementById('app'))
